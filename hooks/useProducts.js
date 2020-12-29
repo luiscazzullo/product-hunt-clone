@@ -3,7 +3,9 @@ import { FirebaseContext } from "../firebase";
 
 const useProducts = (order) => {
   const [products, setProducts] = useState([]);
+
   const { firebase } = useContext(FirebaseContext);
+
   useEffect(() => {
     const getProducts = () => {
       firebase.db
@@ -13,6 +15,7 @@ const useProducts = (order) => {
     };
     getProducts();
   }, []);
+
   function handleSnapshot(snapshot) {
     const products = snapshot.docs.map((doc) => {
       return {
@@ -22,6 +25,7 @@ const useProducts = (order) => {
     });
     setProducts(products);
   }
+  
   return {
     products,
   };
