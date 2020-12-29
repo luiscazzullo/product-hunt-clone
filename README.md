@@ -3,6 +3,6 @@
 Product Hunt clone build with:
 - React
 - Firebase
-- React Context
+- Custom hooks
 - Next JS
 - Styled components
